@@ -15,7 +15,7 @@ Follow these steps to set up and run the project:
 2. Compile the protocol buffer definitions:
 
     ```bash
-    protoc --dart_out=lib/ protos/message.proto
+    protoc --dart_out=lib/src/ protos/message.proto
     ```
 
 3. Generate proto list

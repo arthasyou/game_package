@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:game_package/src/pages/game_page.dart';
-import 'package:game_package/src/pages/home_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
