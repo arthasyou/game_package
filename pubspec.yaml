@@ -1,0 +1,57 @@
+name: game_package
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  dio: ^5.5.0+1
+  hooks_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+  intl: ^0.19.0
+  flame: ^1.18.0
+  just_audio: ^0.9.38
+  web_socket_channel: ^3.0.0
+  protobuf: ^3.1.0
+  
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.11
+  riverpod_generator: ^2.4.0
+  riverpod_lint: ^2.3.10
+  custom_lint: ^0.6.4
+  
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  generate: true
+ 
+  assets:
+    - assets/images/
+    - assets/audio/ 
+
+
+flutter_gen:
+  localization:
+    enabled: true
+    synthetic-package: true
+    arb-dir: lib/l10n
+    template-arb-file: app_en.arb
+    output-localization-file: app_localizations.dart
+

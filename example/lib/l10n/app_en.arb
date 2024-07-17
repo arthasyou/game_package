@@ -1,0 +1,19 @@
+{
+    "@@locale": "en",
+    "language": "English",
+    "@language": {
+        "description": "The current Language"
+    },
+    "app_name": "Slot Machine",
+    "@app_name": {
+        "description": "The app Name"
+    },
+    "go": "GO",
+    "@go": {
+        "description": "The GO button"
+    },
+    "change": "Switch",
+    "@change": {
+        "description": "The Switch button"
+    }
+}
