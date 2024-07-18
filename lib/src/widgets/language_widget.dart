@@ -15,7 +15,7 @@ class LanguagePickerWidget extends ConsumerWidget {
         // value: provider.locale,
         icon: const Icon(
           Icons.language,
-          color: Colors.black,
+          color: Colors.white,
         ),
         items: L10n.all.map((locale) {
           final flag = L10n.getFlag(locale);

@@ -3,6 +3,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:game_package/src/errors/error_display.dart';
 import 'package:game_package/src/provider/error_provider.dart';
+import 'package:game_package/src/widgets/language_widget.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -61,6 +62,13 @@ class SlotMachineWidgetState extends ConsumerState<SlotMachineWidget> {
         Center(
           child: GameWidget(game: game),
         ),
+        // 国际化
+        const Positioned(
+          top: 70,
+          left: 10,
+          child: LanguagePickerWidget(),
+        ),
+        // 金币
         Positioned(
             top: 85,
             left: (MediaQuery.of(context).size.width + 80) / 2,
