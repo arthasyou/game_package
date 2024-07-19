@@ -125,6 +125,7 @@ class SlotMachine extends FlameGame with TapDetector {
 
   @override
   Future<void> onLoad() async {
+    // camera = CameraComponent.withFixedResolution(width: 750, height: 1334);
     _numSprites = imagePaths.length;
     _numOdds = oddsImagePaths.length;
 

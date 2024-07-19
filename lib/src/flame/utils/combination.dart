@@ -1,7 +1,7 @@
 import 'package:flame/components.dart';
-import 'package:flame/flame.dart';
 
 import '../component/lable.dart';
+import 'common_utils.dart';
 
 Future<void> populateGroupComponents(
   PositionComponent group,
@@ -21,8 +21,4 @@ Future<void> populateGroupComponents(
     items.add(label);
     group.add(label);
   }
-}
-
-Future<Sprite> loadSprite(String path) async {
-  return await Flame.images.load(path).then((image) => Sprite(image));
 }
