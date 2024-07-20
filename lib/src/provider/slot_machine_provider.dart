@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_package/src/flame/game_word.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../protos/message.pb.dart';
@@ -17,10 +18,33 @@ class SlotMachineProvider extends ChangeNotifier {
 
   bool _isSpinning = false;
   bool get isSpinning => _isSpinning;
+
   bool shouldStartSpinning = false;
+  void setShouldStartSpinning(bool value) {
+    shouldStartSpinning = value;
+    notifyListeners();
+  }
+
+  bool shouldStartBOS = false;
+  void setShouldStartBOS(bool value) {
+    shouldStartBOS = value;
+    notifyListeners();
+  }
+
+  bool shouldUpdateCoin = false;
+  void setShouldUpdateCoin(bool value) {
+    shouldUpdateCoin = value;
+    notifyListeners();
+  }
 
   int _coin = 0;
   int get coin => _coin;
+
+  int _oldCoin = 0;
+  int get oldCoin => _oldCoin;
+  void setOldCoin(int v) {
+    _oldCoin = v;
+  }
 
   int _win = 0;
   int get win => _win;
@@ -56,11 +80,6 @@ class SlotMachineProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setShouldStartSpinning(bool value) {
-    shouldStartSpinning = value;
-    notifyListeners();
-  }
-
   void setCoin(int coin) {
     _coin = coin;
     notifyListeners();
@@ -78,12 +97,15 @@ class SlotMachineProvider extends ChangeNotifier {
 
   void _setBigOrSmallBet(int value) {
     _bigOrSmallBet = value;
-    notifyListeners();
+    // notifyListeners();
   }
 
   void addBoSBet() {
-    int t = _bigOrSmallBet;
-    _setBigOrSmallBet(t + _chip);
+    if (_coin > _chip) {
+      int t = _bigOrSmallBet;
+      _setBigOrSmallBet(t + _chip);
+      _coin -= _chip;
+    }
   }
 
   void setBets(List<Bet> bets) {
@@ -111,7 +133,7 @@ class SlotMachineProvider extends ChangeNotifier {
         // Increase the amount of the existing Bet
         _bets[betIndex].amount += _chip;
         _coin -= _chip;
-        notifyListeners();
+        // notifyListeners();
       }
     }
   }
@@ -150,7 +172,7 @@ class SlotMachineProvider extends ChangeNotifier {
     a = (a + 1) % 5;
     _chip = _chips[a];
     _chipIndex = a;
-    notifyListeners();
+    // notifyListeners();
   }
 
   void setBetsHistory(List<Bet> bets) {

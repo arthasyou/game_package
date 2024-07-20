@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/games/slot_machine_widget.dart';
+import '../widgets/slot_machine_widget.dart';
 
 class GamePage extends StatelessWidget {
   const GamePage({super.key});

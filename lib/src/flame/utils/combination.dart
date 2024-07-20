@@ -1,6 +1,6 @@
 import 'package:flame/components.dart';
 
-import '../component/lable.dart';
+import '../component/common/lable.dart';
 import 'common_utils.dart';
 
 Future<void> populateGroupComponents(
@@ -16,7 +16,7 @@ Future<void> populateGroupComponents(
   for (int i = 0; i < length; i++) {
     final sprite = await loadSprite(imagePath);
     final label = LabeledSpriteComponent(
-        sprite: sprite, label: values[i].toString(), size: size);
+        sprite: sprite, labelText: values[i].toString(), size: size);
 
     items.add(label);
     group.add(label);

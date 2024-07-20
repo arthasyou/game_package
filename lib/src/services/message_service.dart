@@ -95,5 +95,6 @@ class MessageHandler {
     provider.setCoin(message.balance);
     provider.setWin(message.win);
     provider.setBs(message.result);
+    provider.setShouldStartBOS(true);
   }
 }
