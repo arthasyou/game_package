@@ -75,6 +75,7 @@ class MessageHandler {
     SlotMachineProvider provider,
   ) {
     provider.setCoin(message.balance.toInt());
+    provider.setShouldUpdateCoin(true);
   }
 
   void _handleFruitPlayResult(

@@ -2,24 +2,14 @@ import 'package:flame/camera.dart';
 import 'package:flame/game.dart';
 
 import 'package:flutter/material.dart';
-import 'package:game_package/src/errors/error_display.dart';
 import 'package:game_package/src/flame/game_word.dart';
-import 'package:game_package/src/provider/error_provider.dart';
 import 'package:game_package/src/widgets/language_widget.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../protos/message.pb.dart';
 import '../provider/slot_machine_provider.dart';
 import '../services/message_service.dart';
 import '../services/web_socket_service.dart';
-import 'components/bets.dart';
-import 'components/big_or_small.dart';
-import 'components/image_button.dart';
-import 'components/image_button_group.dart';
-import 'components/image_lable.dart';
-import 'components/reward_group.dart';
-import 'components/switch_group.dart';
 
 class SlotMachineWidget extends ConsumerStatefulWidget {
   const SlotMachineWidget({super.key});
